@@ -1,0 +1,11 @@
+.four.columns.centered
+  %h3 Продукты
+  = will_paginate
+.row
+  .ten.columns.centered
+    .panel
+      %ul.block-grid.three-up
+        -@products.each do |product|
+          = render product
+.four.columns.centered
+  = will_paginate
