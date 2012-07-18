@@ -1,6 +1,6 @@
 .four.columns.centered
-  %h3 Продукты
-  = will_paginate
+  %h3{style: "text-align: center"} Продукты
+  %div{style: "text-align: center"}= will_paginate
 .row
   .ten.columns.centered
     .panel
@@ -8,4 +8,4 @@
         -@products.each do |product|
           = render product
 .four.columns.centered
-  = will_paginate
+  %div{style: "text-align: center"}= will_paginate

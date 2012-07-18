@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     if @order.save
-      redirect_to new_order_path, notice: 'Ваш заказ будет отправлен в ближайшее время'
+      redirect_to new_order_path, notice: t('notices.success_order')
     else
       render "new"
     end

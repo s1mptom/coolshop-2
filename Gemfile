@@ -4,9 +4,9 @@ gem 'rails', '3.2.6'
 gem 'haml-rails'
 gem 'faker'
 gem 'simple_form'
+gem 'thin'
 
 gem 'will_paginate'
-gem 'taps'
 gem 'pg'
 
 group :development do
@@ -14,11 +14,11 @@ group :development do
 end
 
 group :assets do
-  gem 'compass-rails'
-  gem 'sass-rails'
-  gem 'coffee-rails'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'compass-rails', '~> 1.0.3'
+  gem 'zurb-foundation', '~> 3.0.1'
   gem 'uglifier'
-  gem 'zurb-foundation'
 end
 
 gem 'jquery-rails'
