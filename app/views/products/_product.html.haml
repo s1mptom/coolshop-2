@@ -1,7 +1,7 @@
 %li
-  .panel
+  .twelve.columns
     .product{ data: { product_id: product.id } }
-      %ul
+      %ul{style: "text-align: center"}
         = image_tag( asset_path('1.jpeg'), size: "170x170", alt: product.name )
         %li
           %b Name:
@@ -10,5 +10,5 @@
           %b Price:
           = product.price
           $
-        = link_to 'подробнее', product, class: "small button"
-        = link_to 'Добавить в корзину', '#', class: 'small button add_to_cart'
+        = link_to 'Подробнее', product, class: "small button"
+        = link_to 'В Корзину', '#', class: 'small button add_to_cart'

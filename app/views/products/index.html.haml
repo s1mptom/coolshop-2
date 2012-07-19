@@ -1,10 +1,17 @@
-.four.columns.centered
-  %h3{style: "text-align: center"} Продукты
-  %div{style: "text-align: center"}= will_paginate
 .row
-  .ten.columns.centered
-    %ul.block-grid.three-up
-      -@products.each do |product|
-        = render product
-.four.columns.centered
-  %div{style: "text-align: center"}= will_paginate
+  .two.columns
+    .panel
+      %div{style: "text-align: center"}менюшки
+  .eight.columns
+    .panel
+      %div{style: "text-align: center"}центральная часть
+      %h3{style: "text-align: center"} Продукты
+      = will_paginate
+      %ul.block-grid.two-up
+        -@products.each do |product|
+          = render product
+      = will_paginate
+  .two.columns
+    .panel
+      %div{style: "text-align: center"}сайдбар
+      %div{style: "text-align: center"}= link_to 'Ваша Корзина', order_products_path, class: 'small button'
