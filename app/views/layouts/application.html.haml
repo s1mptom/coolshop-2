@@ -8,9 +8,10 @@
     = csrf_meta_tags
   %body
     .row
-      .twelve.columns
+      .twelve.columns.centered
         .panel
           %h3{style: "text-align: center"} Куча одинаковой херни по 999 баксов
+          %div{style: "text-align: right"}= link_to 'Ваша Корзина', order_products_path, class: 'small button'
       .twelve.columns
         - if notice
           .alert-box.success= notice

@@ -1,8 +1,10 @@
 class Order < ActiveRecord::Base
 
-  belongs_to :product
+  has_many :order_products
 
-  attr_accessible :comment, :email, :name, :phonenumber
+  attr_accessible :comment, :email, :name, :phonenumber, :order_products_attributes
+
+  accepts_nested_attributes_for :order_products
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -13,4 +15,10 @@ class Order < ActiveRecord::Base
             :format   => { :with => email_regex }
 
   validates :phonenumber, :presence => true
+
+  def items_from_product_ids(product_ids)
+    product_ids.present? && product_ids.each do |product_id|
+      self.order_products.build(product_id: product_id)
+    end
+  end
 end

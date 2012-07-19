@@ -8,16 +8,11 @@
             = image_tag( asset_path('1.jpeg'), size: "200x200", alt: @product.name )
         .four.columns
           .panel
-            %br
-            %b Name:
-            = @product.name
-            %br
-            %b Description:
-            = @product.description
-            %br
-            %b Price:
-            = @product.price
-            $
-            %br
-            = link_to 'заказать', new_order_path, class: "small button"
-= link_to 'вернуться к просмотру продуктов', root_path, class: "small button"
+            .product{ data: { product_id: @product.id } }
+              %ul
+                %li= "Name: #{@product.name}"
+                %li= "Description: #{@product.description}"
+                %li= "Price: #{@product.price}"
+              = link_to 'Добавить в Корзину', '#', class: 'small button add_to_cart'
+        .four.columns
+= link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small button"

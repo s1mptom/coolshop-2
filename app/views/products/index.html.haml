@@ -3,9 +3,8 @@
   %div{style: "text-align: center"}= will_paginate
 .row
   .ten.columns.centered
-    .panel
-      %ul.block-grid.three-up
-        -@products.each do |product|
-          = render product
+    %ul.block-grid.three-up
+      -@products.each do |product|
+        = render product
 .four.columns.centered
   %div{style: "text-align: center"}= will_paginate

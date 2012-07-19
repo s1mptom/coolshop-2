@@ -212,7 +212,7 @@
     },
 
     setupFirstSlide: function () {
-      //Set initial front photo z-index and fades it in
+      //Set initial front photo z-show and fades it in
       var self = this;
       this.$slides.first()
         .css({"z-index" : 3})
@@ -411,14 +411,14 @@
         }
       }
       this.$bullets.append($li);
-      $li.data('index', index);
+      $li.data('show', index);
       $li.click(function () {
         self.stopClock();
         if (self.options.resetTimerOnClick) {
           self.rotateTimer(true);
           self.startClock();
         }
-        self.$element.trigger('orbit.goto', [$li.data('index')])
+        self.$element.trigger('orbit.goto', [$li.data('show')])
       });
     },
 
@@ -474,7 +474,7 @@
         //set to correct bullet
         this.setActiveBullet();
 
-        //set previous slide z-index to one below what new activeSlide will be
+        //set previous slide z-show to one below what new activeSlide will be
         this.$slides
           .eq(this.prevActiveSlide)
           .css({"z-index" : 2});

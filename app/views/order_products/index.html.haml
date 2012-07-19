@@ -1,0 +1,12 @@
+.ten.columns
+  .panel
+    %h4{style: "text-align: center"} Товары в Вашей Корзине
+    .panel
+      = simple_form_for @order do |f|
+        %ul
+          = f.simple_fields_for :order_products do |op|
+            %li{style: "text-align: center"}
+              = op.object.product.name
+    .div{style: "text-align: center"}
+      = link_to 'Оформить Покупку', new_order_path, class: 'small button'
+      = link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small button"

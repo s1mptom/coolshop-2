@@ -1,13 +1,14 @@
 %li
   .panel
-    = image_tag( asset_path('1.jpeg'), size: "170x170", alt: product.name )
-    %br
-    %b Name:
-    = product.name
-    %br
-    %b Price:
-    = product.price
-    $
-    %br
-    = link_to 'подробнее', product, class: "small button"
-    = link_to 'заказать', new_order_path, class: "small button"
+    .product{ data: { product_id: product.id } }
+      %ul
+        = image_tag( asset_path('1.jpeg'), size: "170x170", alt: product.name )
+        %li
+          %b Name:
+          = product.name
+        %li
+          %b Price:
+          = product.price
+          $
+        = link_to 'подробнее', product, class: "small button"
+        = link_to 'Добавить в корзину', '#', class: 'small button add_to_cart'
