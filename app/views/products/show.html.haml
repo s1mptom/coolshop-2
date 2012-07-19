@@ -1,18 +1,19 @@
 .row
   .twelve.columns
-    .panel
-      %h5= "Подробнее о: #{@product.name}"
-      .row
-        .four.columns
-          .panel
-            = image_tag( asset_path('1.jpeg'), size: "200x200", alt: @product.name )
-        .four.columns
-          .panel
-            .product{ data: { product_id: @product.id } }
-              %ul
-                %li= "Name: #{@product.name}"
-                %li= "Description: #{@product.description}"
-                %li= "Price: #{@product.price}"
-              = link_to 'Добавить в Корзину', '#', class: 'small button add_to_cart'
-        .four.columns
-= link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small button"
+    .four.columns
+      .panel
+        %h5{style: "text-align: center"}= "Подробнее о: #{@product.name}"
+        = image_tag( asset_path('1.jpeg'), size: "200x200", alt: @product.name )
+    .four.columns
+      .panel
+        .product{ data: { product_id: @product.id } }
+          %ul
+            %li= "Name: #{@product.name}"
+            %li= "Description: #{@product.description}"
+            %li= "Price: #{@product.price}"
+            = link_to 'Добавить в Корзину', '#', class: 'small radius button add_to_cart'
+      .panel
+        = link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small radius button"
+    .four.columns
+      .panel
+        %div{style: "text-align: center"}= link_to 'Ваша Корзина', order_products_path, class: 'small success radius button'
