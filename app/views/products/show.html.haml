@@ -13,7 +13,7 @@
             %li= "Price: #{@product.price}"
             = link_to 'Добавить в Корзину', '#', class: 'small radius button add_to_cart'
       .panel
-        = link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small radius button"
+        = link_to 'Вернуться к Просмотру Товаров', root_path, class: "small radius button"
     .four.columns
       .panel
         %div{style: "text-align: center"}= link_to 'Ваша Корзина', order_products_path, class: 'small success radius button'
