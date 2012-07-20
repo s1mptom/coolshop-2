@@ -6,4 +6,5 @@ Coolshop::Application.routes.draw do
     post :add_product, on: :collection
   end
   resources :order_products
+  resources :categories
 end

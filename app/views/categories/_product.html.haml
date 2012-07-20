@@ -1,0 +1,14 @@
+%li
+  .twelve.columns
+    .product{ data: { product_id: product.id } }
+      %ul{style: "text-align: center"}
+        = image_tag( asset_path('1.jpeg'), size: "170x170", alt: product.name )
+        %li
+          %b Name:
+          = product.name
+        %li
+          %b Price:
+          = product.price
+          $
+        = link_to 'Подробнее', product, class: 'small button radius'
+        = link_to 'В Корзину', '#', class: 'small button radius radius add_to_cart'
