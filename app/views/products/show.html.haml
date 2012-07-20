@@ -1,24 +1,20 @@
-.row
-  .twelve.columns
-    .four.columns
-      .panel
-        %h5{style: "text-align: center"}= "Подробнее о: #{@product.name}"
-        #featured
-          %img{src: asset_path('1.jpeg')}/
-          %img{src: asset_path('2.jpeg')}/
-    .four.columns
-      .panel
-        .product{ data: { product_id: @product.id } }
-          %ul
-            %li= "Name: #{@product.name}"
-            %li= "Description: #{@product.description}"
-            %li= "Price: #{@product.price}"
-            = link_to 'Добавить в Корзину', '#', class: 'small radius button add_to_cart'
-      .panel
-        = link_to 'Вернуться к Просмотру Товаров', root_path, class: "small radius button"
-    .four.columns
-      .panel
-        %div{style: "text-align: center"}= link_to 'Ваша Корзина', order_products_path, class: 'small success radius button'
+.three.columns
+  .panel
+    %h5{style: "text-align: center"}= "Подробнее о: #{@product.name}"
+    #featured
+      %img{src: asset_path('1.jpeg')}/
+      %img{src: asset_path('2.jpeg')}/
+.four.columns
+  .panel
+    .product{ data: { product_id: @product.id } }
+      %ul
+        %li= "Name: #{@product.name}"
+        %li= "Description: #{@product.description}"
+        %li= "Price: #{@product.price}"
+        = link_to 'Добавить в Корзину', '#', class: 'small radius button add_to_cart'
+  .panel
+    = link_to 'Вернуться к Просмотру Товаров', root_path, class: "small radius button"
+
 :javascript
   $(window).load(function() {
       $('#featured').orbit();
