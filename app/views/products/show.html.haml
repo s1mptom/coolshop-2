@@ -3,7 +3,9 @@
     .four.columns
       .panel
         %h5{style: "text-align: center"}= "Подробнее о: #{@product.name}"
-        = image_tag( asset_path('1.jpeg'), size: "200x200", alt: @product.name )
+        #featured
+          %img{src: asset_path('1.jpeg')}/
+          %img{src: asset_path('2.jpeg')}/
     .four.columns
       .panel
         .product{ data: { product_id: @product.id } }
@@ -17,3 +19,7 @@
     .four.columns
       .panel
         %div{style: "text-align: center"}= link_to 'Ваша Корзина', order_products_path, class: 'small success radius button'
+:javascript
+  $(window).load(function() {
+      $('#featured').orbit();
+  });

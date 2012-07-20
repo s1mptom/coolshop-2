@@ -1,4 +1,5 @@
 # Use this setup block to configure all options available in SimpleForm.
+
 SimpleForm.setup do |config|
   # Wrappers are used by the form builder to generate a
   # complete input. You can remove any component from the
@@ -60,13 +61,13 @@ SimpleForm.setup do |config|
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.
   # Use :to_sentence to list all errors for each field.
-  # config.error_method = :first
+  config.error_method = :first
 
   # Default tag used for error notification helper.
   config.error_notification_tag = :div
 
   # CSS class to add for error notification helper.
-  config.error_notification_class = 'alert alert-error'
+  config.error_notification_class = '.error'
 
   # ID to add for error notification helper.
   # config.error_notification_id = nil
@@ -98,7 +99,7 @@ SimpleForm.setup do |config|
   config.label_class = 'control-label'
 
   # You can define the class to use on all forms. Default is simple_form.
-  # config.form_class = :simple_form
+  config.form_class = :nice
 
   # You can define which elements should obtain additional classes
   # config.generate_additional_classes_for = [:wrapper, :label, :input]

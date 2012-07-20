@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        order:
+          attributes:
+            name:
+              blank: 'Введите имя!'
+            email:
+              blank: 'Введите email!'
+            phonenumber:
+              blank: 'Введите номер телефона!'

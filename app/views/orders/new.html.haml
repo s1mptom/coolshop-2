@@ -4,9 +4,7 @@
     = simple_form_for @order do |f|
       %ul
         = f.simple_fields_for :order_products do |op|
-          %li
-            = op.input :product_id, as: :hidden
-            = op.object.product.name
+          = op.input :product_id, as: :hidden
       = f.input :name, label: "Name", as: :tel
       = f.input :email, label: "Email", placeholder: "user@domain.com"
       = f.input :phonenumber, label: "Phone Number"
