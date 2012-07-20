@@ -1,23 +1,20 @@
 .row
   .three.columns
-    .panel
-      %div{style: "text-align: center"}
-        %h5категории:
-        %ul
-          %li= '999$'
-          %li= '888$'
-          %li= '777$'
-          %li= '666$'
-          %li= '555$'
-          %li= '444$'
+    %div{style: "text-align: left"}
+      %h6категории:
+      %ul
+        %li= '999$'
+        %li= '888$'
+        %li= '777$'
+        %li= '666$'
+        %li= '555$'
+        %li= '444$'
   .seven.columns
     %h3{style: "text-align: center"} Товары
-    .six.columns.centered
-      = will_paginate
+    = will_paginate
     %ul.block-grid.two-up
       -@products.each do |product|
         = render product
-    .six.columns.centered
-      = will_paginate
+    = will_paginate
   .two.columns
     %div{style: "text-align: center"}= link_to 'Ваша Корзина', order_products_path, class: 'small success radius button'
