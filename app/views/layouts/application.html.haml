@@ -24,6 +24,3 @@
           .two.columns
             %div{style: "text-align: center"}
               = link_to 'Ваша Корзина', order_products_path, class: 'small success radius button'
-              - if @all_num.present?
-                %b Товаров в корзине:
-                = @all_num
