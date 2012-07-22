@@ -10,5 +10,13 @@
           %b Price:
           = product.price
           $
+        = form_for @order do |f|
+          - @prod_num=0
+          = f.fields_for :order_products do |op|
+            - if op.object.product.id == product.id
+              - @prod_num=@prod_num+1
         = link_to 'Подробнее', product, class: 'small button radius'
-        = link_to 'В Корзину', '#', class: 'small button radius radius add_to_cart'
+        - if @prod_num > 0
+          = link_to "В Корзине: #{@prod_num}", '#', class: 'small success button radius radius add_to_cart'
+        - else
+          = link_to 'В Корзину', '#', class: 'small button radius radius add_to_cart'

@@ -6,6 +6,7 @@
         %ul
           = f.fields_for :order_products do |op|
             %li= op.object.product.name
+
     .div{style: "text-align: center"}
       = link_to 'Оформить Покупку', new_order_path, class: 'small button'
       = link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small button"
