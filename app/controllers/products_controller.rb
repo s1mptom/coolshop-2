@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     @products = Product.paginate(:page => params[:page], per_page: 6)
     @order = Order.new
     @order.items_from_product_ids session[:product_ids]
+    @all_num =0
   end
 
   def show
