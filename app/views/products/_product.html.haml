@@ -2,7 +2,7 @@
   .twelve.columns
     .product{ data: { product_id: product.id } }
       %ul{style: "text-align: center"}
-        = image_tag( asset_path("#{product.category.name}""/#{product.name}" "/1.jpeg"), height: '10px', alt: product.name )
+        = image_tag( asset_path("#{product.category.name}""/#{product.id}" "/1.jpeg"), height: '10px', alt: product.name )
         %li
           %b Name:
           = product.name

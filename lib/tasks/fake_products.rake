@@ -38,5 +38,12 @@ namespace :db do
                         price: price,
                         category_id: category)
       end
+
+      Category.create!(name: "999")
+
+      2.times do |n|
+        name = "#{8-n}#{8-n}#{8-n}"
+        Category.create!(name: name)
+      end
     end
 end

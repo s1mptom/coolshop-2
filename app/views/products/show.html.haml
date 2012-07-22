@@ -1,8 +1,8 @@
 .four.columns
   %h5{style: "text-align: center"}= "Подробнее о: #{@product.name}"
   #featured
-    %img{src: asset_path("#{@product.category.name}/#{@product.name}/1.jpeg")}/
-    %img{src: asset_path("#{@product.category.name}/#{@product.name}/2.jpeg")}/
+    %img{src: asset_path("#{@product.category.name}/#{@product.id}/1.jpeg")}/
+    %img{src: asset_path("#{@product.category.name}/#{@product.id}/2.jpeg")}/
 .three.columns
   .panel
     .product{ data: { product_id: @product.id } }
