@@ -6,8 +6,6 @@ module CategoriesHelper
       end
     end
 
-    content_tag :ul do
       raw(links.join("\n"))
-    end
   end
 end

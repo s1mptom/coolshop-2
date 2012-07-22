@@ -17,8 +17,9 @@
         .row
           .three.columns
             %h6категории:
-            %li= link_to "All prices", root_path
-            = categories_menu
+            %ul
+              %li= link_to "All prices", root_path
+              = categories_menu
           = yield
           .two.columns
             %div{style: "text-align: center"}= link_to 'Ваша Корзина', order_products_path, class: 'small success radius button'

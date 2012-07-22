@@ -4,5 +4,6 @@
 $ ->
   $('.product .add_to_cart').on 'click', ->
     $.post '/orders/add_product', product_id: $(this).closest('.product').data('product_id')
+    $('.link#added').show()
     console.log $(this)
     false
