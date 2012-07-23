@@ -21,4 +21,8 @@ class Order < ActiveRecord::Base
       self.order_products.build(product_id: product_id)
     end
   end
+
+  def to_s
+    product.name
+  end
 end

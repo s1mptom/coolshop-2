@@ -4,7 +4,9 @@
     .panel
       %ul
         - @order.order_products.each do |op|
-          %li= op.product.name
+          - @items << op.product
+      - @items.sort{ |a,b| a.name.downcase <=> b.name.downcase }.each do |n|
+        %li= n.name
     .div{style: "text-align: center"}
       = link_to 'Оформить Покупку', new_order_path, class: 'small button'
       = link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small button"

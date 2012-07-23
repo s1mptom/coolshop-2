@@ -16,10 +16,11 @@
           .alert-box.alert= notice
         .row
           .three.columns
-            %h6категории:
-            %ul
-              %li= link_to "All prices", root_path
-              = categories_menu
+            %div{style: "text-align: center"}
+              %h6категории:
+              %ul
+                %li= link_to "All prices", root_path
+                = categories_menu
           = yield
           .two.columns
             %div{style: "text-align: center"}

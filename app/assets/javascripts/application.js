@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+$(document).ready(function() {
+    $('#buttonForModal').click(function() {
+        $('#myModal').reveal();
+    });
+});

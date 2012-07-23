@@ -1,4 +1,10 @@
 ru:
+  simple_form:
+        "yes": 'Да'
+        "no": 'Нет'
+        required:
+          text: 'Обязательная информация'
+          mark: '*'
   activerecord:
     errors:
       models:
