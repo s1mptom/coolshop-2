@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     if @order.save
-      session[:product_ids] = []
+      session[:product_ids] = {}
       redirect_to new_order_path, notice: t('notices.success_order')
     else
       render "new"
@@ -16,8 +16,12 @@ class OrdersController < ApplicationController
   end
 
   def add_product
-    session[:product_ids] = [] unless session[:product_ids]
-    session[:product_ids] << params[:product_id].to_i if params[:product_id]
+    session[:products] = {} unless session[:products]
+    if session[:products][params[:product_id].to_i]
+      session[:products][params[:product_id].to_i]+= 1
+    else
+      session[:products][params[:product_id].to_i] = 1
+    end
     render json: :ok
   end
 

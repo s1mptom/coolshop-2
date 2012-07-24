@@ -3,10 +3,9 @@
     %h4{style: "text-align: center"} Товары в Вашей Корзине
     .panel
       %ul
-        - @order.order_products.each do |op|
-          - @items << op.product
-      - @items.sort{ |a,b| a.name.downcase <=> b.name.downcase }.each do |n|
-        %li= n.name
+        - @products.each do |p|
+          %li= p.name
+          %li= "Количество: #{session[:products][p.id]}"
     .div{style: "text-align: center"}
       = link_to 'Оформить Покупку', new_order_path, class: 'small button'
       = link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small button"

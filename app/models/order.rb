@@ -22,7 +22,4 @@ class Order < ActiveRecord::Base
     end
   end
 
-  def to_s
-    product.name
-  end
 end
