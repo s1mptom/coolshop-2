@@ -16,8 +16,8 @@ class Order < ActiveRecord::Base
 
   validates :phonenumber, :presence => true
 
-  def items_from_product_ids(product_ids)
-    product_ids.present? && product_ids.each do |product_id|
+  def items_from_product_ids(wanted_products)
+    wanted_products.present? && wanted_products.keys.each do |product_id|
       self.order_products.build(product_id: product_id)
     end
   end

@@ -1,11 +1,16 @@
 .seven.columns
   .panel
-    %h4{style: "text-align: center"} Товары в Вашей Корзине
-    .panel
-      %ul
+    %ul{style: "text-align: center"}
+      - if @products.blank?
+        %h3 Ваша корзина пуста
+      - else
+        %h5{style: "text-align: center"} Товары в Вашей Корзине
         - @products.each do |p|
-          %li= p.name
-          %li= "Количество: #{session[:products][p.id]}"
-    .div{style: "text-align: center"}
-      = link_to 'Оформить Покупку', new_order_path, class: 'small button'
-      = link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small button"
+          - @sum = 0 unless @sum
+          - @sum = @sum + p.price*session[:products][p.id]
+          %li= "\"#{p.name}\" x #{session[:products][p.id]} : #{p.price*session[:products][p.id]}$"
+        %h5{style: "text-align: center"}= "На сумму: #{@sum}$"
+
+  .div{style: "text-align: center"}
+    = link_to 'Оформить Покупку', new_order_path, class: 'small button'
+    = link_to 'Вернуться к Просмотру Продуктов', root_path, class: "small button"

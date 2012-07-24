@@ -1,6 +1,6 @@
 class OrderProductsController < ApplicationController
   def index
-    @order = Order.new
+    session[:products] = {} unless session[:products]
     @products = Product.where(id: session[:products].keys)
   end
 end
