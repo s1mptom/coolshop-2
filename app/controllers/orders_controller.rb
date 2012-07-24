@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     if @order.save
-      session[:product_ids] = {}
+      session[:products] = {}
       redirect_to new_order_path, notice: t('notices.success_order')
     else
       render "new"

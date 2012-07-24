@@ -6,10 +6,8 @@
       - else
         %h5{style: "text-align: center"} Товары в Вашей Корзине
         - @products.each do |p|
-          - @sum = 0 unless @sum
-          - @sum = @sum + p.price*session[:products][p.id]
           %li= "\"#{p.name}\" x #{session[:products][p.id]} : #{p.price*session[:products][p.id]}$"
-        %h5{style: "text-align: center"}= "На сумму: #{@sum}$"
+        %h5{style: "text-align: center"}= "На сумму: #{}$"
 
   .div{style: "text-align: center"}
     = link_to 'Оформить Покупку', new_order_path, class: 'small button'
