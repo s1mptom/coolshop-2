@@ -1,12 +1,25 @@
-.seve.columns
-  %h4 Ваш заказ
+.seven.columns
   .panel
+    %h4{ style: "text-align: center;" } Ваш заказ
     = simple_form_for @order do |f|
-      %ul
-        = f.simple_fields_for :order_products do |op|
-          = op.input :product_id, as: :hidden
-        = f.input :name, label: "Name"
+      %table{ style: "width: 100%;" }
+        %thead
+          %tr
+            %td= "Название товара"
+            %td.two= "Кол-во"
+        %tbody
+          = f.simple_fields_for :order_products do |op|
+            = op.input :product_id, as: :hidden
+            %tr
+              %td= op.object.product.name
+              %td= op.input :quantity, input_html: { maxlength: 3 }, label: false
+        %tfoot
+          %tr
+            %td{ colspan: 2, style: "text-align: right;" }= "Итого: #{f.object.order_products.map{ |op| op.quantity * op.product.price }.reduce(:+)}$"
+      .panel
+        %h4{ style: "text-align: center;" } Ваши данные
+        = f.input :name, label: "Имя"
         = f.input :email, label: "Email", placeholder: "user@domain.com"
-        = f.input :phonenumber, label: "Phone Number"
-        = f.input :comment, label: "Commentaries"
+        = f.input :phonenumber, label: "Номер телефона"
+        = f.input :comment, label: "Ваш комментарий"
         = f.button :submit, class: "small button"

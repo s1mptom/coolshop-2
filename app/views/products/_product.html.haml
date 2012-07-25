@@ -15,4 +15,4 @@
         - if session[:products][product.id].present? && session[:products][product.id] >> 0
           = link_to "В Корзине", '#', class: 'small success button radius add_to_cart', "data-reveal-id" => "myModal"
         - else
-          = link_to 'В Корзину', '#', class: 'small button radius add_to_cart', "data-reveal-id" => "myModal"
+          = link_to 'В Корзину', '#', class: 'small button radius add_to_cart', data: { "reveal-id" => "myModal" }

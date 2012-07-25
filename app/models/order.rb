@@ -18,7 +18,7 @@ class Order < ActiveRecord::Base
 
   def items_from_product_ids(wanted_products)
     wanted_products.present? && wanted_products.keys.each do |product_id|
-      self.order_products.build(product_id: product_id)
+      self.order_products.build(product_id: product_id, quantity: wanted_products[product_id])
     end
   end
 

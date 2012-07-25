@@ -4,5 +4,5 @@
 $ ->
   $('.product .add_to_cart').on 'click', ->
     $.post '/orders/add_product', product_id: $(this).closest('.product').data('product_id')
-    $(this).text("В корзине").addClass('success')
+    $(this).text("В Корзине").addClass('success')
     console.log $(this)
