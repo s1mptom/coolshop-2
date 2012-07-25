@@ -1,18 +1,17 @@
 %li
-  .twelve.columns
-    .product{ data: { product_id: product.id } }
-      %ul{style: "text-align: center"}
-        -img= image_tag( asset_path("#{product.category.name}""/#{product.id}" "/1.jpeg"), alt: product.name )
-        = link_to img, product
-        %li
-          %b Name:
-          = product.name
-        %li
-          %b Price:
-          = product.price
-          $
-        = link_to 'Подробнее', product, class: 'small button radius'
-        - if session[:products][product.id].present? && session[:products][product.id] >> 0
-          = link_to "В Корзине", '#', class: 'small success button radius add_to_cart', "data-reveal-id" => "myModal"
-        - else
-          = link_to 'В Корзину', '#', class: 'small button radius add_to_cart', data: { "reveal-id" => "myModal" }
+  .product{ data: { product_id: product.id } }
+    %ul{style: "text-align: center"}
+      -img= image_tag( asset_path("#{product.category.name}""/#{product.id}" "/1.jpeg"), alt: product.name )
+      = link_to img, product
+      %li
+        %b Name:
+        = product.name
+      %li
+        %b Price:
+        = product.price
+        $
+      = link_to 'Подробнее', product, class: 'small button radius'
+      - if session[:products][product.id].present? && session[:products][product.id] >> 0
+        = link_to "В Корзине", '#', class: 'small success button radius add_to_cart', "data-reveal-id" => "myModal"
+      - else
+        = link_to 'В Корзину', '#', class: 'small button radius add_to_cart', data: { "reveal-id" => "myModal" }

@@ -1,18 +1,16 @@
-.four.columns
+.six.columns
   %h5{style: "text-align: center"}= "Подробнее о: #{@product.name}"
   #featured
     %img{src: asset_path("#{@product.category.name}/#{@product.id}/1.jpeg"), alt: @product.name}/
     %img{src: asset_path("#{@product.category.name}/#{@product.id}/2.jpeg"), alt: @product.name}/
-.three.columns
-  .panel
-    .product{ data: { product_id: @product.id } }
-      %ul
-        %li= "Name: #{@product.name}"
-        %li= "Description: #{@product.description}"
-        %li= "Price: #{@product.price}"
-        = link_to 'Добавить в Корзину', '#', class: 'small radius button add_to_cart'
-  .panel
-    = link_to 'Вернуться к Просмотру Товаров', root_path, class: "small radius button"
+.six.columns
+  .product{ data: { product_id: @product.id } }
+    %ul
+      %li= "Name: #{@product.name}"
+      %li= "Description: #{@product.description}"
+      %li= "Price: #{@product.price}"
+      = link_to 'Добавить в Корзину', '#', class: 'small radius button add_to_cart'
+  = link_to 'Вернуться к Просмотру Товаров', root_path, class: "small radius button"
 
 :javascript
   $(window).load(function() {
